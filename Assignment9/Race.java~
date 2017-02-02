@@ -1,0 +1,104 @@
+//********************************************************************
+//  Race.java       Author: Chris Kasza, 100133723
+//  
+//  Assignment 9 Q2 - COMP 1123 A2
+//  
+//  
+
+
+//********************************************************************
+
+import java.util.Scanner;
+
+public class Race
+{
+   //-----------------------------------------------------------------
+   //  Request a number from the user and return it
+   //-----------------------------------------------------------------
+   public static long requestNumber() {
+      double dNumber = 0;
+      long lNumber = 0;
+      Scanner scan = new Scanner(System.in);
+      boolean validNumber = false;
+      
+      while (validNumber == false) {
+         System.out.print( "Enter a positive integer: " );
+         dNumber = scan.nextDouble();
+         
+         if (dNumber <= 0) {
+            // negative number
+            System.out.println( "That number is not a positive integer." );
+         }
+         // string
+         else {
+            // valid
+            validNumber = true;
+            lNumber = (long)dNumber;
+         }
+      }
+      return lNumber;
+   }
+   
+   //-----------------------------------------------------------------
+   //  Build an array based on the occurrence of digits in a number 
+   //  and return said arraay
+   //-----------------------------------------------------------------
+   public static int[] countDigits(long num) {
+      int[] digits = new int[10];
+      int digit;
+      
+      while (num > 0) {
+         digit = (int)(num % 10);
+         System.out.print(num + ", " + digit + ", ");
+         num = num / 10;
+         System.out.println(num);
+         switch (digit) {
+            case 0: 
+               digits[0]++;
+               break;
+            case 1:
+               digits[1]++;
+               break;
+            case 2:
+               digits[2]++;
+               break;
+            case 3:
+               digits[3]++;
+               break;
+            case 4:
+               digits[4]++;
+               break;
+            case 5:
+               digits[5]++;
+               break;
+            case 6:
+               digits[6]++;
+               break;
+            case 7:
+               digits[7]++;
+               break;
+            case 8:
+               digits[8]++;
+               break;
+            case 9:
+               digits[9]++;
+               break;
+         }                     
+      }
+      return digits;
+   }
+   
+   //-----------------------------------------------------------------
+   //  Program jumping off point
+   //-----------------------------------------------------------------
+   public static void main(String[] args) {
+      long number = requestNumber();
+      int[] digits = countDigits(number);
+      System.out.println("The following digits appear this many times:");
+      for (int i = 0; i < 10; i++) {
+         if (digits[i] > 0) {
+            System.out.println(i + " - " + digits[i]);
+         }
+      }
+   }
+}

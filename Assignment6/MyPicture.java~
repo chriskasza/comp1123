@@ -1,0 +1,25 @@
+//********************************************************************
+//  MyPicture.java       Author: Chris Kasza, 100133723
+//
+//  ______________________________________________
+//  ______________________________________________
+//  ______________________________________________
+//  ______________________________________________
+//  ______________________________________________
+//********************************************************************
+
+import javax.swing.*;
+
+public class MyPicture
+{
+   public static void main(String[] args)
+   {
+      JFrame frame = new JFrame("BoxCircle");
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+      frame.getContentPane().add(new BoxCirclePanel());
+
+      frame.pack();
+      frame.setVisible(true);
+   }
+}

@@ -1,0 +1,49 @@
+//********************************************************************
+//  IncInt.java       Author: Chris Kasza, 100133723
+//  
+//  Assignment 10 Q1 - COMP 1123 A2
+//  
+//  Counter class for integers
+//********************************************************************
+
+public class IncInt implements Incrementable {
+   private int i;
+   
+   // Constructor
+   public IncInt(int val) {
+      i = val;
+   }   
+
+   // Increment the counter once
+   public void inc() {
+      i++;
+   }
+   
+   // Increment the counter numTimes
+   public void inc(int numTimes) {
+      for(int j=0; j<numTimes; j++) {
+         inc();
+      }
+   }
+   
+   // Check if counter is odd
+   public boolean odd() {
+      if ((i%2) == 0) {
+         //even
+         return false;
+      } else {
+         //odd
+         return true;
+      }
+   }
+   
+   // Reset the counter
+   public void reset() {
+      i = 0;
+   }
+   
+   // Return info abount counter
+   public String toString() {
+      return Integer.toString(i);
+   }
+}

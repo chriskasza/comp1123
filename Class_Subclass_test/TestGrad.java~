@@ -1,0 +1,36 @@
+public class TestGrad
+{
+  public static void main(String[] args)
+  {
+    GradStudent obj1 = new GradStudent("george", 13, "Doogie Med", "Doogie Houser");
+    
+    System.out.println("\n Initial values:");
+    System.out.println(obj1);
+    System.out.println(obj2);
+    
+    obj1.inc();
+    obj2.inc();
+    
+    System.out.println("\n After incrementing once:");
+    System.out.println(obj1);
+    System.out.println(obj2);
+    
+    obj1.reset();
+    obj2.reset();
+    
+    System.out.println("\n After doing a reset:");
+    System.out.println(obj1);
+    System.out.println(obj2);
+        
+    obj1.inc(5);
+    obj2.inc(5);
+    
+    System.out.println("\n Incrementing 5 times:");
+    System.out.println(obj1);
+    System.out.println(obj2);
+    
+    System.out.println();
+    System.out.println("Is obj2 odd? " + ((IncInt) obj2).odd());
+  }
+}
+  

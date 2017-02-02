@@ -1,0 +1,52 @@
+//********************************************************************
+//  WholeNumbers.java       Author: Chris Kasza, 100133723
+//
+//  Assignment 4 Q2 - COMP 1123 A2
+//
+//  Write a program called WolfvillePhoneNumbers.java which generates 
+//  a random Wolfville number of the form: 902-542-XXXX
+//  where the last 4 digits are random and in the range 0000-9999. 
+//********************************************************************
+
+import java.lang.StringBuilder;
+import java.util.Random;
+
+public class WolfvillePhoneNumbers
+{
+   //-----------------------------------------------------------------
+   //  Provides a randomly generated Wolfville phone number.
+   //-----------------------------------------------------------------
+   public static void main( String[] args )
+   {
+      System.out.println( "A random Wolfville phone number: " + 
+                         genPhone( 902542 ) );
+   }
+
+   //-----------------------------------------------------------------
+   //  Returns a randomized phone number.
+   //  Method accepts an integer.  Random digits will be appended to 
+   //  to the integer to create the random phone number.
+   //-----------------------------------------------------------------   
+   public static String genPhone( int number )
+   {
+      int i;      
+      String areacode, exchange, subscriber, formattedPhone;
+      Random gen = new Random();
+      int digToGen = 10 - String.valueOf( number ).length();
+      StringBuilder sb = new StringBuilder(10);
+      sb.append( number );
+      
+      for( i = 0; i < digToGen; i++ )
+      {
+         //alt: http://www.javamex.com/tutorials/random_numbers/xorshift.shtml
+         sb.append( gen.nextInt(10) );
+      }
+      
+      areacode = String.valueOf( sb ).substring( 0, 3 );
+      exchange = String.valueOf( sb ).substring( 3, 6 );
+      subscriber = String.valueOf( sb ).substring( 6, 10 );
+
+      formattedPhone = areacode + '-' + exchange + '-' + subscriber;
+      return formattedPhone;
+   }
+}

@@ -1,0 +1,49 @@
+//********************************************************************
+//  WolfvillePhoneNumbers.java       Author: Chris Kasza, 100133723
+//
+//  Assignment 4 Q1 - COMP 1123 A2
+//
+//  Write a program called WolfvillePhoneNumbers.java which generates 
+//  a random Wolfville number of the form: 902-542-XXXX
+//  where the last 4 digits are random and in the range 0000-9999. 
+//********************************************************************
+
+import java.util.Random;
+
+public class WolfvillePhoneNumbers
+{
+   //-----------------------------------------------------------------
+   //  Provides a randomly generated Wolfville phone number.
+   //-----------------------------------------------------------------
+   public static void main( String[] args )
+   {
+      System.out.println( "A random Wolfville phone number: " + 
+                         genPhone( 902542 );
+   }
+
+   //-----------------------------------------------------------------
+   //  Generates a random phone number.
+   //  Method accepts an integer.  Random digits will be appended to 
+   //  to the integer to create a random phone number.
+   //-----------------------------------------------------------------   
+   public static int genPhone( int number )
+   {
+      int i, areacode, exchange, subscriber;      
+      String formattedPhone;
+      int digToGen = 10 - String.valueOf( prefix ).length();
+      
+      for( i = 0; i < digToGen; i++ )
+      {
+         numbe += genInt();
+      }
+
+      formattedPhone = areacode + . '-' . + exchange + '-' . + subscriber;      
+      return ;
+   }
+
+   public static int genInt() 
+   {
+      
+   }
+
+}

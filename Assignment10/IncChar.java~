@@ -1,0 +1,16 @@
+//********************************************************************
+//  IncChar.java       Author: Chris Kasza, 100133723
+//  
+//  Assignment 10 Q1 - COMP 1123 A2
+//  
+//  
+
+
+//********************************************************************
+
+import java.util.Scanner;
+import javax.swing.*;
+
+public class IncChar implements Incrementable {
+   
+}

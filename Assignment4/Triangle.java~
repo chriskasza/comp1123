@@ -1,0 +1,67 @@
+//********************************************************************
+//  Triangle.java       Author: Chris Kasza, 100133723
+//
+//  Assignment 4 Q3 - COMP 1123 A2
+//
+//  Write a program called Triangle.java which first reads in the 
+//  (x,y) coordinates for 3 points of a triangle. Each x-y is an 
+//  integer. Compute the triangle’s area. Use the formulas in PP 3.5 
+//  and 3.7.
+//  Distance = sqrt( ( x2 - x1 )^2 + ( y2 - y1 )^2 )
+//  Area = sqrt( s( s - a )( s - b )( s - c ) )
+//********************************************************************
+
+import java.util.Scanner;
+
+public class Triangle
+{
+   //-----------------------------------------------------------------
+   //  Prints integer closest integers above and below provided float.
+   //-----------------------------------------------------------------
+   public static void main( String[] args )
+   {
+      int greater, lesser;
+      double number;
+
+      number = getNum( "decimal" );
+      
+      greater = (int)number + 1;
+      lesser = (int)number;
+      
+      System.out.println( "The closest whole number greater than " + number + 
+                         " is: " + greater );
+      System.out.println( "The closest whole number less than " + number + 
+                         " is: " + lesser );
+   }
+
+   //-----------------------------------------------------------------
+   //  Requests and returns a valid decimal number.
+   //-----------------------------------------------------------------   
+   public static int[] getCoords( int iter )
+   {
+      double number = 0;
+      Scanner in = new Scanner(System.in);
+      boolean notvalid = true;
+      
+      while( notvalid )
+      {
+         System.out.print( "Enter the " + iter + " x-y coordinate values: " );
+         
+         if( in.hasNextDouble() )
+         {
+            number = in.nextDouble();
+            notvalid = false;
+         }
+         else
+         {
+            in.next();
+            System.out.println( "That's not a valid number. Please enter " +
+                               "a " + kind + " value." );
+            notvalid = true;
+         }
+      }
+      
+      in.close();
+      return number;
+   }   
+}
